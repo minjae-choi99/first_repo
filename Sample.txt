@@ -1,2 +1,3 @@
 안녕하세요,
-안녕하세요는 영어로 hello
+안녕하세요는 영어로 hello,
+Good Evening, Good Morning
