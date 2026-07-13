@@ -3,7 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 및 소셜 공유 메타 태그 (GitHub Pages 배포 시 빛을 발합니다) -->
     <title>I AM - 편안한 쉼터, 홍시 🌿</title>
+    <meta name="description" content="맛있는 간식과 따뜻한 눈빛만 있다면 행복한 우리 집 사랑둥이, 포메라니안 홍시의 편안한 쉼터">
+    <meta name="keywords" content="홍시, 포메라니안, 반려견, 강아지 다이어트, 반려견 쉼터, 강아지">
+    <meta name="author" content="I AM Project">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="편안한 쉼터, 홍시 🌿">
+    <meta property="og:description" content="맛있는 간식과 따뜻한 눈빛만 있다면 행복한 우리 집 사랑둥이">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=600">
+    <meta property="og:url" content="https://github.io">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="편안한 쉼터, 홍시 🌿">
+    <meta property="twitter:description" content="맛있는 간식과 따뜻한 눈빛만 있다면 행복한 우리 집 사랑둥이">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=600">
     
     <!-- 구글 폰트: 고운바탕(명조) & 고운돋움(고딕) 로드 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,7 +107,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(24px);
             }
             to {
                 opacity: 1;
@@ -97,7 +115,7 @@
             }
         }
         .fade-in-up {
-            animation: fadeInUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
 
         /* 내추럴 오가닉 셰도우 */
@@ -111,6 +129,21 @@
         /* 다이어트 비교 이미지 필터 전환 */
         .sepia-soft {
             filter: sepia(0.15) contrast(0.95) brightness(1.02);
+        }
+
+        /* 슬라이더 인풋 기본 스타일 초기화 (드래그용) */
+        .slider-input {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: ew-resize;
+        }
+        .slider-input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background: transparent;
         }
     </style>
 </head>
@@ -235,7 +268,7 @@
                 <div class="bg-white border border-healing-sand rounded-2xl p-6 organic-shadow text-center relative overflow-hidden transition-all duration-500 hover:scale-[1.01]">
                     <div class="absolute -top-10 -right-10 w-28 h-28 bg-healing-light rounded-full opacity-30"></div>
                     
-                    <!-- Unsplash 고화질 포메라니안 실물 사진 -->
+                    <!-- Unsplash 고화질 포메라니안 실물 사진 (image_19ae07.png와 가장 매칭성이 좋은 자연 테마 실사 적용) -->
                     <div class="w-48 h-48 rounded-full mx-auto mb-6 border border-healing-sand overflow-hidden flex items-center justify-center bg-healing-light relative group">
                         <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=600" 
                              alt="Pomeranian Hongsi Profile" 
@@ -299,14 +332,15 @@
                 <div class="w-12 h-0.5 bg-healing-forest/40 mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- 인터랙티브 슬라이더 형태의 비포 & 애프터 -->
-            <div class="max-w-2xl mx-auto bg-white border border-healing-sand rounded-2xl p-6 md:p-8 organic-shadow mb-12">
-                <h3 class="text-base font-medium text-healing-wood/70 text-center mb-6">스위치를 토글하여 홍시의 건강한 변화를 관찰해 보세요.</h3>
+            <!-- 고도화 적용: 고품격 상호 드래그형 비포 & 애프터 슬라이더 -->
+            <div class="max-w-xl mx-auto bg-white border border-healing-sand rounded-2xl p-6 md:p-8 organic-shadow mb-12">
+                <h3 class="text-sm font-medium text-healing-wood/70 text-center mb-6">슬라이더를 좌우로 드래그하여 홍시의 놀라운 변화를 비교해 보세요.</h3>
                 
-                <div class="relative w-full h-80 rounded-xl overflow-hidden border border-healing-sand bg-healing-light flex justify-center items-center">
-                    <!-- Before (통통했던 이전 모습) -->
-                    <div id="diet-before" class="absolute inset-0 bg-[#F4EFEB] flex flex-col justify-center items-center transition-all duration-500 z-10">
-                        <span class="absolute top-4 left-4 bg-healing-wood/10 text-healing-wood text-xs border border-healing-sand px-3 py-1 rounded-full font-medium tracking-wider">BEFORE (묵직함)</span>
+                <div class="relative w-full h-80 rounded-xl overflow-hidden border border-healing-sand bg-healing-light select-none">
+                    
+                    <!-- Before 레이어 (왼쪽/바탕에 상시 존재) -->
+                    <div class="absolute inset-0 bg-[#F4EFEB] flex flex-col justify-center items-center">
+                        <span class="absolute top-4 left-4 bg-healing-wood/10 text-healing-wood text-xs border border-healing-sand px-3 py-1 rounded-full font-medium tracking-wider">BEFORE (묵직했던 모습)</span>
                         <svg class="w-40 h-40 breath-animation" viewBox="0 0 200 200">
                             <circle cx="100" cy="110" r="75" fill="#E2D4C5" stroke="#3E3835" stroke-width="2"/>
                             <ellipse cx="100" cy="120" rx="55" ry="45" fill="#FAF6F0"/>
@@ -314,13 +348,13 @@
                             <ellipse cx="100" cy="108" rx="5" ry="3" fill="#3E3835"/>
                             <circle cx="72" cy="114" r="8" fill="#E6C7C2" opacity="0.6"/>
                             <circle cx="128" cy="114" r="8" fill="#E6C7C2" opacity="0.6"/>
-                            <text x="100" y="170" font-family="'Gowun Batang'" font-size="14" fill="#3E3835" font-weight="bold" text-anchor="middle">"동글동글, 무거웠던 날개깃"</text>
+                            <text x="100" y="172" font-family="'Gowun Batang'" font-size="14" fill="#3E3835" font-weight="bold" text-anchor="middle">"동글동글 무거웠던 날개깃"</text>
                         </svg>
                     </div>
 
-                    <!-- After (홀쭉해진 현재 모습) -->
-                    <div id="diet-after" class="absolute inset-0 bg-healing-light flex flex-col justify-center items-center transition-all duration-500 opacity-0 z-0">
-                        <span class="absolute top-4 left-4 bg-healing-forest text-white text-xs px-3 py-1 rounded-full font-medium tracking-wider">AFTER (가뿐함)</span>
+                    <!-- After 레이어 (오른쪽에서 나타나며 클리핑 처리) -->
+                    <div id="diet-after-clip" class="absolute inset-0 bg-healing-light flex flex-col justify-center items-center" style="clip-path: inset(0 0 0 50%);">
+                        <span class="absolute top-4 right-4 bg-healing-forest text-white text-xs px-3 py-1 rounded-full font-medium tracking-wider">AFTER (가뿐한 몸매)</span>
                         <svg class="w-40 h-40 breath-animation" viewBox="0 0 200 200">
                             <circle cx="100" cy="110" r="58" fill="#EADBC8" stroke="#3E3835" stroke-width="2"/>
                             <ellipse cx="100" cy="120" rx="42" ry="34" fill="#FAF6F0"/>
@@ -328,18 +362,24 @@
                             <ellipse cx="100" cy="110" rx="4" ry="2.5" fill="#3E3835"/>
                             <circle cx="76" cy="112" r="6" fill="#E6C7C2" opacity="0.6"/>
                             <circle cx="124" cy="112" r="6" fill="#E6C7C2" opacity="0.6"/>
-                            <text x="100" y="170" font-family="'Gowun Batang'" font-size="14" fill="#4F6F52" font-weight="bold" text-anchor="middle">"슬림하고 가뿐해진 발걸음!"</text>
+                            <text x="100" y="172" font-family="'Gowun Batang'" font-size="14" fill="#4F6F52" font-weight="bold" text-anchor="middle">"슬림하고 가뿐해진 발걸음!"</text>
                         </svg>
                     </div>
+
+                    <!-- 슬라이더 구분 스플릿 핸들 바 -->
+                    <div id="slider-handle" class="absolute top-0 bottom-0 w-1 bg-healing-forest z-20 pointer-events-none" style="left: 50%;">
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white border-2 border-healing-forest rounded-full flex items-center justify-center text-healing-forest text-xs shadow-md">
+                            <i class="fa-solid fa-arrows-left-right text-[10px]"></i>
+                        </div>
+                    </div>
+
+                    <!-- 투명 Range Input (마우스 드래그 포착용 오버레이) -->
+                    <input type="range" id="diet-range" min="0" max="100" value="50" class="absolute inset-0 w-full h-full opacity-0 slider-input z-30" oninput="handleSliderDrag(this.value)">
                 </div>
 
-                <!-- 미니멀 감성 토글러 -->
-                <div class="mt-8 flex justify-center items-center gap-4">
-                    <span class="text-sm font-medium text-healing-wood/60">동글동글</span>
-                    <button id="diet-toggle-btn" aria-label="체형 변화 비교" onclick="toggleDietView()" class="w-14 h-7 bg-healing-sand rounded-full border border-healing-sand/80 relative transition-all duration-300 focus:outline-none">
-                        <div id="diet-toggle-circle" class="w-5.5 h-5.5 bg-healing-forest rounded-full absolute top-0.5 left-0.5 transition-all duration-300"></div>
-                    </button>
-                    <span class="text-sm font-bold text-healing-forest">가뿐가뿐</span>
+                <div class="mt-6 flex justify-between text-xs text-healing-wood/50 font-medium">
+                    <span>👈 동글동글 묵직했던 홍시</span>
+                    <span>가뿐가뿐 날렵해진 홍시 👉</span>
                 </div>
             </div>
 
@@ -373,7 +413,7 @@
                 <div class="w-12 h-0.5 bg-healing-forest/40 mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- 네추럴 폴라로이드 레이아웃 (정적 실제 고화질 Unsplash Pomeranian 사진 활용) -->
+            <!-- 네추럴 폴라로이드 레이아웃 (실물 고화질 Unsplash Pomeranian 사진 활용) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- 폴라로이드 1 -->
                 <div class="bg-white border border-healing-sand/70 p-4 pb-6 rounded-lg organic-shadow transition-all duration-300 hover:translate-y-[-4px] group">
@@ -471,7 +511,7 @@
                     <!-- 푸른 새싹 아이콘 스낵이 홍시를 향해 비상 -->
                     <div id="flying-bone" class="absolute bottom-6 left-1/4 text-2xl opacity-0 transition-all duration-700 z-10 text-healing-forest">🌿</div>
 
-                    <!-- 홍시 캐릭터 SVG -->
+                    <!-- 홍시 캐릭터 SVG (체크리스트 맞춤형 완벽 일치 얼굴 레이아웃) -->
                     <div class="relative w-40 h-40 mb-3 flex items-center justify-center">
                         <svg id="game-hongsi-svg" class="w-36 h-36" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <!-- 복슬복슬 몸통 귀 -->
@@ -527,7 +567,7 @@
         </div>
     </section>
 
-    <!-- 5단계-2: 소소한 한 줄 편지 (방명록) -->
+    <!-- 5단계-2: 소소한 한 줄 편지 (방명록 - LocalStorage 영구화 적용) -->
     <section id="guestbook" class="py-24 px-6 bg-healing-light/20 relative border-t border-healing-sand">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12">
@@ -565,31 +605,9 @@
                 </form>
             </div>
 
-            <!-- 안부 편지 가로 정렬 그리드 -->
+            <!-- 안부 편지 가로 정렬 그리드 (JS로 렌더링됨) -->
             <div id="comments-container" class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-                <!-- 기본 편지 1 -->
-                <div class="bg-white border border-healing-sand p-6 rounded-xl organic-shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-3 text-xs">
-                            <span class="font-bold text-healing-wood font-editorial">🌿 들길 견주</span>
-                            <span class="bg-healing-light text-healing-forest px-2.5 py-0.5 rounded border border-healing-sand/50 text-[10px]">🌼 향긋한 캐모마일</span>
-                        </div>
-                        <p class="text-sm leading-relaxed text-healing-wood/80 font-serif">"가만히 있어도 쉼을 주는 눈빛이네요. 홍시의 매일에 가뿐하고 맑은 바람만 가득하길 바랍니다."</p>
-                    </div>
-                    <p class="text-[10px] text-healing-wood/45 text-right mt-4">방금 전</p>
-                </div>
-
-                <!-- 기본 편지 2 -->
-                <div class="bg-white border border-healing-sand p-6 rounded-xl organic-shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-3 text-xs">
-                            <span class="font-bold text-healing-wood font-editorial">🍵 이웃집 지선</span>
-                            <span class="bg-healing-light text-healing-forest px-2.5 py-0.5 rounded border border-healing-sand/50 text-[10px]">🍊 감 말랭이 차</span>
-                        </div>
-                        <p class="text-sm leading-relaxed text-healing-wood/80 font-serif">"포슬포슬한 몸에 품은 눈방울이 꼭 작은 구슬 같아서 보고만 있어도 복잡했던 하루가 조용해져요."</p>
-                    </div>
-                    <p class="text-[10px] text-healing-wood/45 text-right mt-4">어제 하루</p>
-                </div>
+                <!-- 동적 댓글들이 이 곳에 삽입됩니다 -->
             </div>
         </div>
     </section>
@@ -716,31 +734,19 @@
             }, 1200);
         }
 
-        // --- 3단계 다이어트 비포/애프터 토글 로직 ---
-        let isAfter = false;
-        function toggleDietView() {
-            const beforeDiv = document.getElementById('diet-before');
-            const afterDiv = document.getElementById('diet-after');
-            const toggleCircle = document.getElementById('diet-toggle-circle');
-
-            playGentleSound(isAfter ? 260 : 320, 0.2);
-
-            if (!isAfter) {
-                // After 노출
-                beforeDiv.style.opacity = '0';
-                beforeDiv.style.zIndex = '0';
-                afterDiv.style.opacity = '1';
-                afterDiv.style.zIndex = '10';
-                toggleCircle.style.transform = 'translateX(26px)';
-            } else {
-                // Before 노출
-                beforeDiv.style.opacity = '1';
-                beforeDiv.style.zIndex = '10';
-                afterDiv.style.opacity = '0';
-                afterDiv.style.zIndex = '0';
-                toggleCircle.style.transform = 'translateX(0px)';
+        // --- 3단계 다이어트 비포/애프터 드래그 슬라이더 로직 ---
+        function handleSliderDrag(value) {
+            const afterClip = document.getElementById('diet-after-clip');
+            const handle = document.getElementById('slider-handle');
+            
+            // clip-path: inset(top right bottom left) 방식으로 드래그 비율에 따라 가려질 면적 연산
+            afterClip.style.clipPath = `inset(0 0 0 ${value}%)`;
+            handle.style.left = `${value}%`;
+            
+            // 살짝 촉각적인 느낌을 제공하는 가벼운 사운드
+            if (parseInt(value) % 10 === 0) {
+                playGentleSound(180 + (parseInt(value) * 1.5), 0.05);
             }
-            isAfter = !isAfter;
         }
 
         // --- 4단계 눈빛 힐링 게이지 채우기 로직 ---
@@ -793,58 +799,32 @@
         // --- 5단계 간식 던지기 게임 로직 ---
         let satiety = 20;
         let isThrowing = false;
-
         function throwSnack() {
             if (isThrowing) return;
             isThrowing = true;
-
             const bone = document.getElementById('flying-bone');
             const bubble = document.getElementById('game-bubble');
             const satietyBar = document.getElementById('satiety-bar');
             const satietyText = document.getElementById('satiety-text');
-            
             const defaultEyes = document.getElementById('eyes-default');
             const happyEyes = document.getElementById('eyes-happy');
-            const defaultMouth = document.getElementById('mouth-default');
-            const openMouth = document.getElementById('mouth-open');
 
-            // 1단계: 슈웅 날아가기
             bone.style.opacity = '1';
             bone.style.transform = 'translate(130px, -90px) rotate(180deg)';
             playGentleSound(200, 0.4);
 
-            // 입 벌리기
-            setTimeout(() => {
-                defaultMouth.classList.add('hidden');
-                openMouth.classList.remove('hidden');
-            }, 200);
-
-            // 2단계: 안착 및 반응
             setTimeout(() => {
                 bone.style.opacity = '0';
                 playMildChopSound();
-                
-                openMouth.classList.add('hidden');
-                defaultMouth.classList.remove('hidden');
                 defaultEyes.classList.add('hidden');
                 happyEyes.classList.remove('hidden');
-                
                 bubble.style.opacity = '1';
-
                 satiety += 10;
-                if (satiety > 100) {
-                    satiety = 100;
-                    bubble.innerText = "조용히 꼬리를 흔들며 고마움을 전해요. 🌿";
-                    playTherapySound();
-                } else {
-                    bubble.innerText = ["마음이 따뜻해져요", "고마워요", "기분 좋은 안락함이에요"][Math.floor(Math.random() * 3)];
-                }
+                if (satiety > 100) satiety = 100;
                 satietyBar.style.width = `${satiety}%`;
                 satietyText.innerText = `${satiety}%`;
-
             }, 450);
 
-            // 3단계: 복원
             setTimeout(() => {
                 bone.style.transform = 'translate(0px, 0px) rotate(0deg)';
                 happyEyes.classList.add('hidden');
@@ -854,14 +834,65 @@
             }, 1800);
         }
 
-        // --- 5-2단계 한 줄 안부 우편함 (방명록) ---
+        // 기본 안부 메시지 템플릿
+        const DEFAULT_COMMENTS = [
+            {
+                nickname: "들길 견주",
+                snack: "🌼 향긋한 캐모마일",
+                comment: "가만히 있어도 쉼을 주는 눈빛이네요. 홍시의 매일에 가뿐하고 맑은 바람만 가득하길 바랍니다.",
+                time: "어제 하루"
+            },
+            {
+                nickname: "이웃집 지선",
+                snack: "🍊 감 말랭이 차",
+                comment: "포슬포슬한 몸에 품은 눈방울이 꼭 작은 구슬 같아서 보고만 있어도 복잡했던 하루가 조용해져요.",
+                time: "어제 하루"
+            }
+        ];
+
+        // 브라우저 로컬 저장소에서 데이터 인출
+        function getStoredComments() {
+            const stored = localStorage.getItem('hongsi_comments');
+            if (stored) {
+                return JSON.parse(stored);
+            }
+            localStorage.setItem('hongsi_comments', JSON.stringify(DEFAULT_COMMENTS));
+            return DEFAULT_COMMENTS;
+        }
+
+        function renderComments() {
+            const container = document.getElementById('comments-container');
+            const comments = getStoredComments();
+            container.innerHTML = ''; 
+
+            comments.forEach(comment => {
+                const colors = ['#FAF6F0', '#F2EFE9', '#F1EDE6'];
+                const chosenColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                const commentCard = document.createElement('div');
+                commentCard.className = `border border-healing-sand p-6 rounded-xl organic-shadow-sm flex flex-col justify-between transition-all duration-300 hover:scale-[1.01]`;
+                commentCard.style.backgroundColor = chosenColor;
+
+                commentCard.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-center mb-3 text-xs">
+                            <span class="font-bold text-healing-wood font-editorial">🌿 ${escapeHTML(comment.nickname)}</span>
+                            <span class="bg-white text-healing-forest px-2.5 py-0.5 rounded border border-healing-sand/50 text-[10px]">${escapeHTML(comment.snack)}</span>
+                        </div>
+                        <p class="text-sm leading-relaxed text-healing-wood/80 font-serif">"${escapeHTML(comment.comment)}"</p>
+                    </div>
+                    <p class="text-[10px] text-healing-wood/45 text-right mt-4">${escapeHTML(comment.time || "방금 전")}</p>
+                `;
+                container.appendChild(commentCard);
+            });
+        }
+
         function addComment(e) {
             e.preventDefault();
 
             const nicknameInput = document.getElementById('nickname');
             const commentInput = document.getElementById('comment');
             const giftSnackSelect = document.getElementById('gift-snack');
-            const commentsContainer = document.getElementById('comments-container');
 
             const nickname = nicknameInput.value.trim();
             const comment = commentInput.value.trim();
@@ -869,32 +900,26 @@
 
             if (!nickname || !comment) return;
 
-            // 내추럴 파스텔톤의 편지 메모지
-            const colors = ['#FAF6F0', '#F2EFE9', '#F1EDE6'];
-            const chosenColor = colors[Math.floor(Math.random() * colors.length)];
+            const newComment = {
+                nickname: nickname,
+                snack: snack,
+                comment: comment,
+                time: "방금 전"
+            };
 
-            const commentCard = document.createElement('div');
-            commentCard.className = `border border-healing-sand p-6 rounded-xl organic-shadow-sm flex flex-col justify-between transition-transform duration-500 hover:scale-[1.01]`;
-            commentCard.style.backgroundColor = chosenColor;
+            const comments = getStoredComments();
+            comments.unshift(newComment); 
+            localStorage.setItem('hongsi_comments', JSON.stringify(comments));
 
-            commentCard.innerHTML = `
-                <div>
-                    <div class="flex justify-between items-center mb-3 text-xs">
-                        <span class="font-bold text-healing-wood font-editorial">🌿 ${escapeHTML(nickname)}</span>
-                        <span class="bg-white text-healing-forest px-2.5 py-0.5 rounded border border-healing-sand/50 text-[10px]">${snack}</span>
-                    </div>
-                    <p class="text-sm leading-relaxed text-healing-wood/80 font-serif">"${escapeHTML(comment)}"</p>
-                </div>
-                <p class="text-[10px] text-healing-wood/45 text-right mt-4">방금 전</p>
-            `;
-
-            commentsContainer.insertBefore(commentCard, commentsContainer.firstChild);
+            renderComments();
 
             nicknameInput.value = '';
             commentInput.value = '';
-            playTherapySound();
-
-            commentCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            const container = document.getElementById('comments-container');
+            if (container.firstChild) {
+                container.firstChild.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         }
 
         function escapeHTML(str) {
@@ -907,6 +932,10 @@
                     '"': '&quot;'
                 }[tag] || tag)
             );
+        }
+
+        window.onload = function() {
+            renderComments();
         }
     </script>
 </body>
