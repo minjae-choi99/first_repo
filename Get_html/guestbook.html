@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍시에게 편지 쓰기 | 편안한 쉼터, 홍시</title>
+    <meta name="description" content="맛있는 간식과 따뜻한 눈빛만 있다면 행복한 우리 집 사랑둥이, 포메라니안 홍시의 편안한 쉼터">
+    <meta name="keywords" content="홍시, 포메라니안, 반려견, 강아지 다이어트, 반려견 쉼터, 강아지">
+    <meta name="author" content="I AM Project">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        healing: {
+                            light: '#F4F1EA',
+                            sand: '#E5DED4',
+                            olive: '#79AC78',
+                            forest: '#4F6F52',
+                            deep: '#3A4D39',
+                            wood: '#3E3835',
+                            bg: '#F9F8F6'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Gowun Batang"', 'serif'],
+                        sans: ['"Gowun Dodum"', '"Noto Sans KR"', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="guestbook" class="selection:bg-healing-sand selection:text-healing-deep">
+<!-- 공통 네비게이션 바: 모든 페이지에서 이 코드를 그대로 사용 -->
+<nav class="fixed top-0 left-0 w-full bg-healing-bg/85 backdrop-blur-md border-b border-healing-sand z-50 py-4 px-6 transition-all duration-300">
+    <div class="max-w-5xl mx-auto flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 group">
+            <span class="text-2xl text-healing-forest">🌿</span>
+            <span class="text-xl font-bold tracking-wide text-healing-wood font-editorial group-hover:text-healing-forest transition-colors">편안한 쉼터, 홍시</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 text-base font-medium text-healing-wood/80">
+            <a href="index.html" data-nav-page="home" class="nav-link hover:text-healing-forest transition-colors py-1">쉼터</a>
+            <a href="profile.html" data-nav-page="profile" class="nav-link hover:text-healing-forest transition-colors py-1">소개</a>
+            <a href="diet.html" data-nav-page="diet" class="nav-link hover:text-healing-forest transition-colors py-1">변화</a>
+            <a href="gallery.html" data-nav-page="gallery" class="nav-link hover:text-healing-forest transition-colors py-1">눈빛</a>
+            <a href="game.html" data-nav-page="game" class="nav-link hover:text-healing-forest transition-colors py-1">마음 나눔</a>
+            <a href="guestbook.html" data-nav-page="guestbook" class="nav-letter-link bg-healing-forest hover:bg-healing-deep text-white px-5 py-2 rounded-full organic-shadow-sm transition-all hover:-translate-y-0.5 text-sm">편지 쓰기</a>
+        </div>
+
+        <button id="mobile-menu-button" type="button" class="md:hidden text-xl text-healing-wood focus:outline-none" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden flex-col items-center gap-4 py-6 mt-3 bg-healing-light/95 rounded-2xl mx-4 border border-healing-sand text-base font-medium">
+        <a href="index.html" data-nav-page="home" class="nav-link hover:text-healing-forest transition-colors py-1">쉼터</a>
+        <a href="profile.html" data-nav-page="profile" class="nav-link hover:text-healing-forest transition-colors py-1">소개</a>
+        <a href="diet.html" data-nav-page="diet" class="nav-link hover:text-healing-forest transition-colors py-1">변화</a>
+        <a href="gallery.html" data-nav-page="gallery" class="nav-link hover:text-healing-forest transition-colors py-1">눈빛</a>
+        <a href="game.html" data-nav-page="game" class="nav-link hover:text-healing-forest transition-colors py-1">마음 나눔</a>
+        <a href="guestbook.html" data-nav-page="guestbook" class="nav-letter-link bg-healing-forest text-white px-6 py-2 rounded-full mt-2 text-sm">편지 쓰기</a>
+    </div>
+</nav>
+<main class="page-main">
+<section class="py-24 px-6 bg-healing-light/20 relative border-t border-healing-sand" id="guestbook">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-12">
+<span class="text-2xl">💌</span>
+<h2 class="text-3xl md:text-4xl font-bold text-healing-wood mt-3 mb-4 font-editorial">홍시에게 남기는 따뜻한 편지</h2>
+<p class="text-base text-healing-wood/75 font-light">가족과 랜선 지인분들의 고요하고 향긋한 안부 인사를 기다립니다</p>
+<div class="w-12 h-0.5 bg-healing-forest/40 mx-auto mt-4 rounded-full"></div>
+</div>
+<!-- 편지지 작성 폼 -->
+<div class="bg-white border border-healing-sand rounded-xl p-6 md:p-8 organic-shadow mb-12 max-w-2xl mx-auto">
+<form class="space-y-4" id="comment-form" onsubmit="addComment(event)">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-healing-wood mb-2 font-editorial" for="nickname">필명 (이름)</label>
+<input class="w-full p-3 rounded-lg border border-healing-sand bg-healing-bg/50 focus:outline-none focus:border-healing-forest text-sm" id="nickname" placeholder="예: 평온한 가을날" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-healing-wood mb-2 font-editorial" for="gift-snack">마음에 담은 차 한 잔</label>
+<select class="w-full p-3 rounded-lg border border-healing-sand bg-white focus:outline-none focus:border-healing-forest text-sm text-healing-wood/80" id="gift-snack">
+<option value="🍵 보드라운 녹차">🍵 보드라운 녹차</option>
+<option value="🌾 구수한 보리차">🌾 구수한 보리차</option>
+<option value="🌼 향긋한 캐모마일">🌼 향긋한 캐모마일</option>
+<option value="🍊 달콤 쌉싸름한 귤피차">🍊 달콤 쌉싸름한 귤피차</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-healing-wood mb-2 font-editorial" for="comment">따스한 말 한마디</label>
+<textarea class="w-full p-3 rounded-lg border border-healing-sand bg-healing-bg/50 focus:outline-none focus:border-healing-forest text-sm leading-relaxed" id="comment" placeholder="홍시야, 앞으로도 아프지 말고 너만의 느릿하고 포근한 시간 속에서 오래오래 행복하렴." required="" rows="3"></textarea>
+</div>
+<button class="w-full py-3 bg-healing-forest hover:bg-healing-deep text-white text-sm font-medium rounded-lg transition-all" type="submit">
+                        💌 고요히 우편함에 편지 넣기
+                    </button>
+</form>
+</div>
+<!-- 안부 편지 가로 정렬 그리드 (JS로 렌더링됨) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto" id="comments-container">
+<!-- 동적 댓글들이 이 곳에 삽입됩니다 -->
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-healing-deep text-healing-light/95 border-t border-healing-deep py-12 px-6 text-center text-sm font-light">
+<div class="max-w-5xl mx-auto space-y-4">
+<div class="flex justify-center gap-6 text-lg text-healing-light/60">
+<a aria-label="메인 화면" class="hover:text-healing-light transition-colors" href="#"><i class="fa-solid fa-seedling"></i></a>
+<a aria-label="온기 전달" class="hover:text-healing-light transition-colors" href="#"><i class="fa-solid fa-heart"></i></a>
+<a aria-label="쉼터 홈" class="hover:text-healing-light transition-colors" href="#"><i class="fa-solid fa-house"></i></a>
+</div>
+<p class="text-base font-medium font-editorial">맛있는 간식과 따뜻한 눈빛만 있다면 행복한 우리 집 사랑둥이 '홍시'</p>
+<p class="text-xs text-healing-light/40">© 2026 'I AM' Project - 우리 집 홍시 내추럴 쉼터. All Rights Reserved.</p>
+</div>
+</footer>
+<script src="js/common.js"></script>
+</body>
+</html>

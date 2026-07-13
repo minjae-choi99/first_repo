@@ -1,0 +1,31 @@
+<!-- 공통 네비게이션 바: 모든 페이지에서 이 코드를 그대로 사용 -->
+<nav class="fixed top-0 left-0 w-full bg-healing-bg/85 backdrop-blur-md border-b border-healing-sand z-50 py-4 px-6 transition-all duration-300">
+    <div class="max-w-5xl mx-auto flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 group">
+            <span class="text-2xl text-healing-forest">🌿</span>
+            <span class="text-xl font-bold tracking-wide text-healing-wood font-editorial group-hover:text-healing-forest transition-colors">편안한 쉼터, 홍시</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 text-base font-medium text-healing-wood/80">
+            <a href="index.html" data-nav-page="home" class="nav-link hover:text-healing-forest transition-colors py-1">쉼터</a>
+            <a href="profile.html" data-nav-page="profile" class="nav-link hover:text-healing-forest transition-colors py-1">소개</a>
+            <a href="diet.html" data-nav-page="diet" class="nav-link hover:text-healing-forest transition-colors py-1">변화</a>
+            <a href="gallery.html" data-nav-page="gallery" class="nav-link hover:text-healing-forest transition-colors py-1">눈빛</a>
+            <a href="game.html" data-nav-page="game" class="nav-link hover:text-healing-forest transition-colors py-1">마음 나눔</a>
+            <a href="guestbook.html" data-nav-page="guestbook" class="nav-letter-link bg-healing-forest hover:bg-healing-deep text-white px-5 py-2 rounded-full organic-shadow-sm transition-all hover:-translate-y-0.5 text-sm">편지 쓰기</a>
+        </div>
+
+        <button id="mobile-menu-button" type="button" class="md:hidden text-xl text-healing-wood focus:outline-none" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden flex-col items-center gap-4 py-6 mt-3 bg-healing-light/95 rounded-2xl mx-4 border border-healing-sand text-base font-medium">
+        <a href="index.html" data-nav-page="home" class="nav-link hover:text-healing-forest transition-colors py-1">쉼터</a>
+        <a href="profile.html" data-nav-page="profile" class="nav-link hover:text-healing-forest transition-colors py-1">소개</a>
+        <a href="diet.html" data-nav-page="diet" class="nav-link hover:text-healing-forest transition-colors py-1">변화</a>
+        <a href="gallery.html" data-nav-page="gallery" class="nav-link hover:text-healing-forest transition-colors py-1">눈빛</a>
+        <a href="game.html" data-nav-page="game" class="nav-link hover:text-healing-forest transition-colors py-1">마음 나눔</a>
+        <a href="guestbook.html" data-nav-page="guestbook" class="nav-letter-link bg-healing-forest text-white px-6 py-2 rounded-full mt-2 text-sm">편지 쓰기</a>
+    </div>
+</nav>

@@ -1,0 +1,107 @@
+body {
+            font-family: 'Gowun Dodum', 'Noto Sans KR', sans-serif;
+            background-color: #F9F8F6;
+            color: #3E3835;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* 명조 서체 지정 */
+        .font-editorial {
+            font-family: 'Gowun Batang', serif;
+        }
+
+        /* 스크롤바 커스텀 */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9F8F6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #79AC78;
+            border-radius: 9999px;
+        }
+
+        /* 잔잔한 숨쉬기 애니메이션 */
+        @keyframes gentle-breath {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-6px) scale(1.01); }
+        }
+        .breath-animation {
+            animation: gentle-breath 6s ease-in-out infinite;
+        }
+
+        /* 꼬리 살랑살랑 (매우 부드러운 템포) */
+        @keyframes gentle-wag {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(8deg); }
+        }
+        .wag-animation {
+            animation: gentle-wag 1.5s ease-in-out infinite;
+            transform-origin: bottom left;
+        }
+
+        /* 자연스러운 페이드인-업 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        /* 내추럴 오가닉 셰도우 */
+        .organic-shadow {
+            box-shadow: 0 12px 32px -8px rgba(79, 111, 82, 0.08);
+        }
+        .organic-shadow-sm {
+            box-shadow: 0 6px 16px -4px rgba(79, 111, 82, 0.05);
+        }
+        
+        /* 다이어트 비교 이미지 필터 전환 */
+        .sepia-soft {
+            filter: sepia(0.15) contrast(0.95) brightness(1.02);
+        }
+
+        /* 슬라이더 인풋 기본 스타일 초기화 (드래그용) */
+        .slider-input {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: ew-resize;
+        }
+        .slider-input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background: transparent;
+        }
+    
+
+/* MPA 공통 네비게이션 현재 페이지 표시 */
+.nav-link[aria-current="page"] {
+    color: #4F6F52;
+    font-weight: 700;
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
+}
+
+.nav-letter-link[aria-current="page"] {
+    background-color: #3A4D39;
+    box-shadow: 0 6px 16px -4px rgba(79, 111, 82, 0.18);
+}
+
+/* 고정 네비게이션에 본문이 가려지지 않도록 공통 여백 */
+.page-main {
+    padding-top: 76px;
+    min-height: 100vh;
+}
